@@ -169,7 +169,7 @@ char* newLog(void)
   static char newFileName[13];
   while(1)
   {
-    sprintf_P(newFileName, PSTR("LOG%05d.TXT"), newFileNumber); //Splice the new file number into this file name
+    sprintf_P(newFileName, PSTR("LOG%05u.log"), newFileNumber); //Splice the new file number into this file name
 
     //If we are able to create this file, then it didn't exist, we're good, break
     if (newFile.open(newFileName, O_CREAT | O_EXCL | O_WRITE)) break;
